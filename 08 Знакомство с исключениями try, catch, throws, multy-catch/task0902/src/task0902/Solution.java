@@ -23,6 +23,7 @@ public class Solution {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
             StackTraceElement element=stackTraceElements[2];
             String methodName = element.getMethodName();
+//        System.out.println(methodName);
         return methodName;
     }
 
@@ -32,6 +33,7 @@ public class Solution {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StackTraceElement element=stackTraceElements[2];
         String methodName = element.getMethodName();
+//        System.out.println(methodName);
         return methodName;
     }
 
@@ -41,6 +43,7 @@ public class Solution {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StackTraceElement element=stackTraceElements[2];
         String methodName = element.getMethodName();
+//        System.out.println(methodName);
         return methodName;
     }
 
@@ -50,6 +53,7 @@ public class Solution {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StackTraceElement element=stackTraceElements[2];
         String methodName = element.getMethodName();
+//        System.out.println(methodName);
         return methodName;
     }
 
@@ -58,6 +62,7 @@ public class Solution {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StackTraceElement element=stackTraceElements[2];
         String methodName = element.getMethodName();
+//        System.out.println(methodName);
         return methodName;
     }
 }
