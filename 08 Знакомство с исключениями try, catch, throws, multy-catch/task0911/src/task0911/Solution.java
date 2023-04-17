@@ -27,7 +27,7 @@ public class Solution {
         }
         //напишите тут ваш код
         catch (NullPointerException e) {
-            String error = e.getClass().getName();
+            String error = e.getClass().getSimpleName();
             System.out.println(error);
         }
     }

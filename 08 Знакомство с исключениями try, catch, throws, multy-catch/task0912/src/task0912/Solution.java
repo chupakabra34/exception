@@ -17,10 +17,14 @@ Requirements:
 public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код
-
-        int num = Integer.parseInt("XYZ");
-        System.out.println(num);
-
+try {
+    int num = Integer.parseInt("XYZ");
+    System.out.println(num);
+}
         //напишите тут ваш код
+        catch (NumberFormatException e){
+            String error = e.getClass().getSimpleName();
+            System.out.println(error);
+        }
     }
 }
