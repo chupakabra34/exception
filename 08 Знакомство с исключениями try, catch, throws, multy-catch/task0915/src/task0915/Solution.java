@@ -36,12 +36,20 @@ public class Solution {
         try {
             handleExceptions();
         } catch (FileSystemException e) {
-            throw new RuntimeException(e);
+            BEAN.log(e);
         }
     }
 
     public static void handleExceptions() throws FileSystemException {
-        BEAN.methodThrowExceptions();
+        try {
+            BEAN.methodThrowExceptions();
+        } catch (FileSystemException e) {
+            BEAN.log(e);
+            throw e;
+        } catch (IOException e) {
+            BEAN.log(e);
+        }
+
     }
 
     public static class StatelessBean {
@@ -52,20 +60,12 @@ public class Solution {
         public void methodThrowExceptions() throws CharConversionException, FileSystemException, IOException {
             int i = (int) (Math.random() * 3);
             if (i == 0) {
-                try {
-                    throw new CharConversionException();
-                } catch (CharConversionException e) {
-                    BEAN.log(e);
-                }
+                throw new CharConversionException();
             } else if (i == 1) {
                 BEAN.log(new Exception());
                 throw new FileSystemException("");
             } else if (i == 2) {
-                try {
-                    throw new IOException();
-                } catch (IOException e) {
-                    BEAN.log(e);
-                }
+                throw new IOException();
             }
         }
     }

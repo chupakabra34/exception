@@ -19,16 +19,16 @@ public class Solution {
     public static void main(String[] args) {
     }
 
-    static class MyException {
+    static class MyException extends RuntimeException{
     }
 
-    static class MyException2 {
+    static class MyException2 extends RuntimeException{
     }
 
-    static class MyException3 {
+    static class MyException3 extends Exception{
     }
 
-    static class MyException4 {
+    static class MyException4 extends Exception{
     }
 }
 

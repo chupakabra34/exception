@@ -2,9 +2,7 @@ package task1012;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /* 
 Количество букв
@@ -45,5 +43,27 @@ public class Solution {
         }
 
         // напишите тут ваш код
+        Map<Character, Integer> count = getChar(list);
+        for (int i = 0; i < alphabet.size(); i++) {
+            if (count.get(alphabet.get(i)) != null) {
+                System.out.println(alphabet.get(i) + " " + count.get(alphabet.get(i)));
+            } else {
+                System.out.println(alphabet.get(i) + " " + 0);
+            }
+        }
+    }
+
+    public static Map<Character, Integer> getChar(ArrayList<String> list) {
+        Map<Character, Integer> charCount = new HashMap<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) != null) {
+                for (Character character : list.get(i).toCharArray()) {
+                    Integer count = charCount.get(character);
+                    int newCount = (count == null ? 1 : count + 1);
+                    charCount.put(character, newCount);
+                }
+            }
+        }
+        return charCount;
     }
 }
