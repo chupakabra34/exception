@@ -42,11 +42,22 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
+        HashMap<String, Integer> map = new HashMap<>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int id = Integer.parseInt(reader.readLine());
-        String name = reader.readLine();
-
-        System.out.println("Id=" + id + " Name=" + name);
+        while (true) {
+            try {
+                int id = Integer.parseInt(reader.readLine());
+                String name = reader.readLine();
+                map.put(name, id);
+            } catch (Exception e) {
+                break;
+            }
+        }
+        for (Map.Entry<String, Integer> pair : map.entrySet()) {
+            String name = pair.getKey();
+            Integer id = pair.getValue();
+            System.out.println("Id=" + id + " Name=" + name);
+        }
     }
 }
